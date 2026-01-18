@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-
-export default function Home() {
+import ConnectDb from "../lib/db.js"
+export default async function Home() {
+  const conn=await ConnectDb();
+  console.log(conn);
   return (
     <>
     <Button>Welcome to TODO-app</Button>
